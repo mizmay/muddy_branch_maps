@@ -68,8 +68,8 @@ module.exports.template = {
       "data": "assets/Muddy_Branch_Greenway_Trail_Map/muddy_branch_watershed.geojson"
     }
   },
-  "sprite": "https://mizmay.github.io/muddy_branch_maps/assets/sprites/sprites",
-  "glyphs": "https://mizmay.github.io/muddy_branch_maps/assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://carterhughes.github.io/muddy_branch_maps/assets/sprites/sprites",
+  "glyphs": "https://carterhughes.github.io/muddy_branch_maps/assets/fonts/{fontstack}/{range}.pbf",
   "layers": [
     "background",
     "hillshade",

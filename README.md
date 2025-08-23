@@ -12,7 +12,7 @@ If you are interested in deploying (or modifying) this map from your own account
 1. [Fork this repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository) to your Github account
 2. Set up a local web server and make any changes to the underlying data, styles, icons, etc.
 3. [Enable Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site) in the new location
-4. Search and replace any hard-coded references to the original Github Pages hosting site (e.g. https://mizmay.github.io/) with the new domain
+4. Search and replace any hard-coded references to the original Github Pages hosting site (e.g. https://carterhughes.github.io/) with the new domain
 
 ## Data from OpenStreetMap
 
