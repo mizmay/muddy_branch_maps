@@ -113,5 +113,98 @@ Icons are [custom SVGs](./assets/icons) created for this project and transformed
 
 The map currently uses [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) for all text labels, accessed from [here](./assets/fonts). You can switch to any [Maplibre GL compatible font](https://github.com/maplibre/font-maker) by updating the `text-font` declarations [throughout the stylesheet](./assets/Muddy_Branch_Greenway_Trail_Map/style.json) and the stylesheet `glyph` [location](./assets/Muddy_Branch_Greenway_Trail_Map/style.json#L27) (if stored somewhere else). 
 
+### Running the Map Locally with Caddy
 
+This project can be served locally using the **Caddy** web server. Caddy is a lightweight, zero-config HTTP server that makes it easy to host static web apps during development.
 
+---
+
+#### 1. Install Caddy
+
+You can install Caddy on Windows, macOS, or Linux.
+
+**Windows (Chocolatey):**
+```powershell
+choco install caddy -y
+```
+
+**macOS (Homebrew):**
+```bash
+brew install caddy
+```
+
+**Linux (apt-based example):**
+```bash
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo tee /usr/share/keyrings/caddy-stable-archive-keyring.asc
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+```
+
+You can also download binaries from the official site:  
+https://caddyserver.com/download
+
+Verify installation:
+```bash
+caddy version
+```
+
+---
+
+#### 2. Build the App (if required)
+
+If this project uses a build step (e.g., Vite, React, Angular, Parcel), run:
+
+```bash
+npm install
+npm run build
+```
+
+This generates a static output directory such as `dist/` or `build/`.
+
+If the project contains only static files, you can skip this step.
+
+---
+
+#### 3. Serve the App Locally
+
+Navigate into your project directory (or into the build output directory if applicable):
+
+```bash
+cd <your-project-folder>
+```
+
+Start a local server:
+
+```bash
+caddy file-server --listen :8080 --root . --browse
+```
+
+Open the app in your browser:
+
+```
+http://localhost:8080
+```
+
+---
+
+#### 4. Serving a Build Directory
+
+If your application outputs compiled files to a folder such as `dist/`:
+
+```bash
+caddy file-server --listen :8080 --root ./dist
+```
+
+---
+
+#### 5. Stopping the Server
+
+Press:
+
+```
+Ctrl + C
+```
+
+to stop the Caddy server.
